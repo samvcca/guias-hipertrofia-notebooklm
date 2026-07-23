@@ -22,23 +22,31 @@ Foram selecionados 5 documentos abertos (PDFs) cobrindo bases nutricionais, fisi
 ## 3. Engenharia de Prompts e Cicatrizes (Troubleshooting)
 Esta seção documenta a evolução da interação com a IA no NotebookLM, registrando o diagnóstico do comportamento do modelo, o refinamento dos comandos e o tratamento de falhas de renderização ou conteúdo.
 ### Caso 1: Mapeamento de Recomendação e Distribuição Proteica
-* **Prompt Vago (Iteração 1):**  
+* **Prompt Vago (Iteração 1):**
+* <img width="1080" height="736" alt="Image" src="https://github.com/user-attachments/assets/5b70b251-06db-4b6b-87ee-3db8da09a5e5" />
+
   > *"Quanto de proteína eu preciso comer por dia para ganhar massa?"*
-* **Resposta Obtida da IA:** Resposta em texto corrido e marcadores simples, citando faixas genéricas da ISSN (1,4 a 2,0 g/kg/dia) e ACSM (1,2 a 2,0 g/kg/dia).
-* **Diagnóstico / Cicatriz:** O texto corrido exigia leitura densa para extrair e comparar métricas específicas entre perfis de praticantes e estratégias de timing.
-* **Prompt Refinado (Iteração 2):**  
+* **Resultado:** Resposta em texto corrido e marcadores simples, citando faixas genéricas da ISSN (1,4 a 2,0 g/kg/dia) e ACSM (1,2 a 2,0 g/kg/dia).
+* **Diagnóstico:** O texto corrido exigia leitura densa para extrair e comparar métricas específicas entre perfis de praticantes e estratégias de timing.
+* **Prompt Refinado (Iteração 2):**
+* <img width="1080" height="1143" alt="Image" src="https://github.com/user-attachments/assets/dcf188b8-79fd-4725-bb09-a8cbd1f75fd7" />
+
   > *"Com base exclusivamente nas fontes do caderno sobre nutrição esportiva, extraia a recomendação exata de ingestão diária de proteína (g/kg/dia) para hipertrofia muscular. Monte uma tabela comparativa com 3 colunas: Perfil do Praticante, Recomendação (g/kg/dia) e Distribuição por Refeição."*
-* **Resultado & Troubleshooting Técnico:** A IA estruturou a matriz dividindo entre Praticante Geral, Praticante Treinado (1,6 a 2,2 g/kg/dia) e Dieta Hipocalórica (2,2 a 3,0 g/kg/dia). Porém, o refinamento revelou um bug no renderizador Markdown do NotebookLM: as quebras de linha enviadas como `<br>` foram exibidas como texto puro dentro das células da tabela. 
+* **Resultado:** A IA estruturou a matriz dividindo entre Praticante Geral, Praticante Treinado (1,6 a 2,2 g/kg/dia) e Dieta Hipocalórica (2,2 a 3,0 g/kg/dia). Porém, o refinamento revelou um bug no renderizador Markdown do NotebookLM: as quebras de linha enviadas como `<br>` foram exibidas como texto puro dentro das células da tabela. 
 * **Ação Corretiva:** Sanitização manual do texto exportado antes da publicação no repositório.
 ---
 ### Caso 2: Calibração de Volume de Treino, Níveis de Experiência e RIR
-* **Prompt Vago (Iteração 1):**  
+* **Prompt Vago (Iteração 1):**
+* <img width="1080" height="803" alt="Image" src="https://github.com/user-attachments/assets/f510ec8d-2448-4d22-8de9-a80cf1f43c99" />
+
   > *"Quantas séries eu devo fazer na academia por semana?"*
-* **Resposta Obtida da IA:** Listou faixas amplas (baixo: $\le 9$ séries; moderado: 10-20; alto: 20-30; muito alto: $> 30$) e explicou conceitos teóricos como Volume Mínimo Efetivo (VME) e Volume Máximo Recuperável (VMR).
-* **Diagnóstico / Cicatriz:** A IA não relacionou o volume aos níveis de experiência (iniciante, intermediário, avançado) nem abordou a métrica de esforço (RIR).
-* **Prompt Refinado (Iteração 2):**  
+* **Resultado:** Listou faixas amplas (baixo: $\le 9$ séries; moderado: 10-20; alto: 20-30; muito alto: $> 30$) e explicou conceitos teóricos como Volume Mínimo Efetivo (VME) e Volume Máximo Recuperável (VMR).
+* **Diagnóstico:** A IA não relacionou o volume aos níveis de experiência (iniciante, intermediário, avançado) nem abordou a métrica de esforço (RIR).
+* **Prompt Refinado (Iteração 2):**
+* <img width="1080" height="1528" alt="Image" src="https://github.com/user-attachments/assets/884dddac-02fc-4ac4-b332-65dda78c4949" />
+
   > *"Analise o artigo de treinamento de força carregado e responda: Qual é a faixa de volume semanal de séries de trabalho por agrupamento muscular recomendada para maximizar a hipertrofia? Diferencie os valores entre iniciantes, intermediários e avançados, e explique o conceito de Repetições de Reserva (RIR) aplicado a essas séries."*
-* **Resultado & Diagnóstico de Alucinação Evitada:** O refinamento forçou o LLM a declarar uma lacuna da literatura presente nos PDFs: **as fontes não fixam uma contagem de séries isolada exclusivamente por nível de praticante**, mas sim limites individuais e zonas de intensidade (% de 1RM). A IA explicou o RIR como método subjetivo de autorregulação, destacando a falta de precisão perceptual em iniciantes (tendência a subestimar a proximidade da falha).
+* **Resultado & Diagnóstico:** O refinamento forçou o LLM a declarar uma lacuna da literatura presente nos PDFs: **as fontes não fixam uma contagem de séries isolada exclusivamente por nível de praticante**, mas sim limites individuais e zonas de intensidade (% de 1RM). A IA explicou o RIR como método subjetivo de autorregulação, destacando a falta de precisão perceptual em iniciantes (tendência a subestimar a proximidade da falha).
 ---
 ## 4. Miniguia de Estudo (Entrega Final)
 ### 4.1. Resumos Estruturados
