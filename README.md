@@ -8,15 +8,15 @@ Este projeto tem como foco a **Ciência do Treinamento de Força, Nutrição Esp
 * **Miniguia de Estudos:** Produzir um material consolidado em formato de resumos estruturados, glossário e biblioteca de prompts reutilizáveis para futuras revisões teóricas e práticas.
 ---
 ## 2. Curadoria de Fontes
-Foram selecionados 5 documentos abertos (PDFs) cobrindo bases nutricionais, fisiológicas e metodológicas do treinamento de força:
+Foram selecionadas 5 fontes abertas para fundamentar o caderno de estudos no NotebookLM. Os arquivos PDF estão hospedados diretamente neste repositório para acesso rápido:
 
-| # | Fonte / Autores | Tipo de Documento | Foco Central no Caderno |
+| # | Fonte / Autores | Documento Original (PDF) | Foco Central |
 | :--- | :--- | :--- | :--- |
-| **1** | LIRA, Kenny Judson Cruz de (UFRN, 2025) | Revisão de Literatura (TCC) | *Influência do Tipo de Proteína (Animal vs. Vegetal) sobre o Aumento e Manutenção da Massa Muscular*. |
-| **2** | DOMINGUES, Letícia (UNOPAR, 2023) | Dissertação e Relatório Técnico | *Proteína e Aumento da Massa Muscular em Praticantes de Exercícios Resistidos e Recomposição Corporal*. |
-| **3** | COSTA, Mateus Cordeiro et al. (UFAL/UFRPE, 2025) | Periódico | *Autorregulação no Treinamento de Força: Métodos Objetivos (TBV/Perda de Velocidade) e Subjetivos (RIR/PSE)*. |
-| **4** | REIS, Magnelson Bonfim et al. (UNIGRAN, 2023) | Artigo Científico | *Overtraining e o Método De-Load: Estratégias para Recuperação e Reparação Muscular e Articular*. |
-| **5** | NEPA / UNICAMP (4ª Ed., 2011) | Guia / Tabela de Composição de Alimentos | *Tabela Brasileira de Composição de Alimentos (TACO)*: Densidade nutricional e aminogramas. |
+| **1** | LIRA, Kenny Judson Cruz de (UFRN, 2025) | [📄 Acessar PDF](./Lira_2025.PDF) | *Influência do Tipo de Proteína sobre Massa Muscular* |
+| **2** | DOMINGUES, Letícia (UNOPAR, 2023) | [📄 Acessar PDF](./Domingues_2023.PDF) | *Proteína, Exercícios Resistidos e Recomposição Corporal* |
+| **3** | COSTA, Mateus Cordeiro et al. (UFAL/UFRPE, 2025) | [📄 Acessar PDF](./Costa-etal_2025.PDF) | *Autorregulação no Treinamento de Força (VBT, RIR/PSE)* |
+| **4** | REIS, Magnelson Bonfim et al. (UNIGRAN, 2023) | [📄 Acessar PDF](./Reis-etal_2023.PDF) | *Overtraining e o Método De-Load* |
+| **5** | NEPA / UNICAMP (4ª Ed., 2011) | [📄 Acessar PDF](./taco_4_edicao.PDF) | *Tabela Brasileira de Composição de Alimentos (TACO)* |
 
 ---
 ## 3. Engenharia de Prompts e Cicatrizes (Troubleshooting)
